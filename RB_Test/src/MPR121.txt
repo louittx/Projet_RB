@@ -1,0 +1,45 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_MPR121.h>
+
+#define InterruptPin 19
+
+Adafruit_MPR121 cap = Adafruit_MPR121();
+volatile bool irq_flag = false; // <<< flag d'interruption
+
+void IRAM_ATTR int_MPR121()
+{
+  irq_flag = true; // <<< juste mettre le flag
+}
+
+void setup()
+{
+    Serial.begin(115200);
+    
+    // Initialiser le capteur
+    if (!cap.begin(0x5A))
+    {
+        Serial.println("Erreur : MPR121 non trouvé. Vérifiez le câblage !");
+        while (1);
+    }
+    Serial.println("MPR121 détecté !");
+    
+    // Initialiser l'interruption
+    pinMode(InterruptPin, INPUT_PULLUP);
+    attachInterrupt(digitalPinToInterrupt(InterruptPin), int_MPR121, FALLING);
+}
+
+void loop()
+{
+    if (irq_flag)
+    {
+        irq_flag = false; // <<< remettre à false tout de suite
+
+        uint16_t touched = cap.touched(); // <<< ici c'est safe
+        Serial.print("Touches détectées : ");
+        Serial.println(touched, BIN);
+    }
+
+    // Tu peux continuer ton programme ici sans bloquer
+    delay(10); // petit delay pour éviter le CPU à 100%
+}
