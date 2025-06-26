@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/rb_v2"
+        android:layout_width="298dp"
+        android:layout_height="324dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rb_v2" />
+
+    <ImageView
+        android:id="@+id/robot_avantbras_droit"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="187dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_avantbras_droit" />
+
+    <ImageView
+        android:id="@+id/robot_avantbras_gauche"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_avantbras_gauche" />
+
+    <ImageView
+        android:id="@+id/robot_bras_droit"
+        android:layout_width="25dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="165dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_bras_droit" />
+
+    <ImageView
+        android:id="@+id/robot_bras_gauche"
+        android:layout_width="25dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="165dp"
+        android:layout_marginEnd="67dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_bras_gauche" />
+
+    <ImageView
+        android:id="@+id/robot_mains_droit"
+        android:layout_width="28dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="209dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_mains_droit" />
+
+    <ImageView
+        android:id="@+id/robot_mains_gauche"
+        android:layout_width="28dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginEnd="58dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_mains_gauche" />
+
+    <ImageView
+        android:id="@+id/robot_oreille_droit"
+        android:layout_width="9dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="88dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_oreille_droit" />
+
+    <ImageView
+        android:id="@+id/robot_oreille_gauche"
+        android:layout_width="9dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="65dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_oreille_gauche" />
+
+    <ImageView
+        android:id="@+id/robot_tors_droit"
+        android:layout_width="91dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="158dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tors_droit" />
+
+    <ImageView
+        android:id="@+id/robot_tors_gauche"
+        android:layout_width="98dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginEnd="70dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tors_gauche" />
+
+    <ImageView
+        android:id="@+id/robot_tete"
+        android:layout_width="239dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tete" />
+
+    <ImageView
+        android:id="@+id/robot_tors_2"
+        android:layout_width="99dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="127dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tors_2" />
+
+    <ImageView
+        android:id="@+id/robot_tors_3"
+        android:layout_width="117dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tors_3" />
+
+    <ImageView
+        android:id="@+id/robot_tors"
+        android:layout_width="77dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="75dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2"
+        app:srcCompat="@drawable/robot_tors" />
+
+
+    <ImageView
+        android:id="@+id/heart_on_fire"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_on_fire"
+        />
+    <ImageView
+        android:id="@+id/broken_heart"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/broken_heart"
+        />
+    <ImageView
+        android:id="@+id/mending_heart"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mending_heart"
+        />
+    <ImageView
+        android:id="@+id/heart_suit"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_suit"
+        />
+
+    <ImageView
+        android:id="@+id/heart_on_fire2"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_on_fire"
+        />
+    <ImageView
+        android:id="@+id/broken_heart2"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/broken_heart"
+        />
+    <ImageView
+        android:id="@+id/mending_heart2"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mending_heart"
+        />
+    <ImageView
+        android:id="@+id/heart_suit2"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_suit"
+        />
+
+    <ImageView
+        android:id="@+id/heart_on_fire3"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="112dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_on_fire"
+        />
+    <ImageView
+        android:id="@+id/broken_heart3"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="112dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/broken_heart"
+        />
+    <ImageView
+        android:id="@+id/mending_heart3"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="112dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mending_heart"
+        />
+    <ImageView
+        android:id="@+id/heart_suit3"
+        android:layout_width="52dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="112dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/heart_suit"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.653"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_v2"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/ButtonConnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="44dp"
+        android:text="Connexion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:text="Button2"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/rb_v2"
+        app:layout_constraintStart_toStartOf="@+id/rb_v2"
+        app:layout_constraintTop_toTopOf="@+id/rb_v2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
