@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
             if (service != null) {
                 if (service.ConectedApareil == true){
                     //TextConnection.text = "Connecter"
-                    StartRBs = true
+                    StartRB = true
                 }
                 else{
                     //TextConnection.text = "Non Connecter"
