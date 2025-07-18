@@ -20,6 +20,7 @@ import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.delay
 import kotlin.concurrent.thread
+import java.nio.ByteBuffer
 
 class MainActivity : AppCompatActivity() {
     lateinit var  sharedPreferences: SharedPreferences
@@ -106,11 +107,12 @@ class MainActivity : AppCompatActivity() {
 
         sharedPreferences = this.getSharedPreferences("Caracter", MODE_PRIVATE)
 
-        var ValueHeart = sharedPreferences.getInt("ValueHeart", 0)
-        var ValueBody = sharedPreferences.getInt("ValueBody", 0)
+        var StokValueHeart = sharedPreferences.getInt("ValueHeart", 0)
+        var StokValueBody = sharedPreferences.getInt("ValueBody", 0)
         var StartRB = false
-
-        body.updateBody(0b11111111111111)
+        var ValueBody = 0b11111111111111
+        var BufferValueBody = ByteBuffer.allocate(2)
+        body.updateBody(ValueBody)
         Handler(Looper.getMainLooper()).postDelayed({ // delay a task
             if (service != null) {
                 if (service.ConectedApareil == true){
@@ -119,17 +121,16 @@ class MainActivity : AppCompatActivity() {
                 }
                 else{
                     //TextConnection.text = "Non Connecter"
-                    StartRB = true
+                    StartRB = false
                 }
             }
         }, 1000)
         thread {
-            Thread.sleep(1000)
-            while(true) {
-                if (StartRB == true) {
-                    // Start the code afet the connextion of bluetooth
-                }
-                Thread.sleep(1000)
+            Thread.sleep(1200)
+            while(StartRB) {
+                BufferValueBody.putShort(ValueBody.toShort())
+                val SendValueBody = BufferValueBody.array()
+                service.connectedThread?.write(SendValueBody,2)
             }
         }
         /*Button_1.setOnClickListener {
