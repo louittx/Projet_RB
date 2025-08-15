@@ -118,13 +118,14 @@ class MainActivity : AppCompatActivity() {
         var StoreValueBody = sharedPreferences.getInt("ValueBody", 0)
         var StartRB = false
         var ValueBody = 0b11111111111111
-        var BufferValueBody = ByteBuffer.allocate(2)
+        //var BufferValueBody = ByteBuffer.allocate(2)
         body.updateBody(ValueBody)
         Handler(Looper.getMainLooper()).postDelayed({ // delay a task
             if (service != null) {
                 if (service.ConectedApareil == true){
                     //TextConnection.text = "Connecter"
                     StartRB = true
+                    Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show()
                 }
                 else{
                     //TextConnection.text = "Non Connecter"
@@ -134,12 +135,26 @@ class MainActivity : AppCompatActivity() {
         }, 1000)
         thread {
             Thread.sleep(1200)
-            while(StartRB) {
-                BufferValueBody.putInt(ValueBody)
-                val SendValueBody = BufferValueBody.array()
-                service.connectedThread?.write(SendValueBody,2)
+
+            val bufferValueBody = ByteBuffer.allocate(2) // Alloué une seule fois
+
+            while (true) {
+                if (this::service.isInitialized && service.ConectedApareil) {
+                    bufferValueBody.clear() // Reset du curseur
+                    bufferValueBody.putShort(ValueBody.toShort()) // 2 octets
+                    val sendValueBody = bufferValueBody.array()
+
+                    service.connectedThread?.write(sendValueBody, sendValueBody.size)
+
+                    // Toast sur le thread principal
+                    Handler(Looper.getMainLooper()).post {
+                        Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                Thread.sleep(50)
             }
         }
+
         /*Button_1.setOnClickListener {
             datax = datax+1
             val editor = sharedPreferences.edit()
