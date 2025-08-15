@@ -1,0 +1,64 @@
+#include <Arduino.h>
+#include <EEPROM.h>
+
+#define EMOTION_ADDRESS 0
+int i = 0;
+u_int16_t emotion = 65321;
+u_int16_t recupemeotion = 0;
+u_int8_t emotion1 = 0;
+u_int8_t emotion2 = 0;
+u_int8_t emotion3 = 0;
+u_int8_t emotion4 = 0;
+u_int8_t emotion5 = 0;
+
+void saveEmotion(int16_t emotion)
+{
+    EEPROM.put(EMOTION_ADDRESS, emotion);// Utilise put() pour écrire un entier de 16 bits
+    EEPROM.commit(); // Obligatoire si tu es sur ESP32
+}
+
+int16_t loadEmotion()
+{
+    int16_t value;
+    EEPROM.get(EMOTION_ADDRESS, value); // Utilise get() pour lire un entier de 16 bits
+    return value;
+}
+
+void setup()
+{
+    Serial.begin(9600);
+    EEPROM.begin(512); // Taille de la mémoire EEPROM (obligatoire pour ESP)
+
+    uint8_t currentEmotion = loadEmotion();
+    Serial.print("Émotion chargée : ");
+    Serial.println(currentEmotion);
+
+    // Exemple : on change l’émotion à "en colère"
+    saveEmotion(emotion);
+}
+
+void loop()
+{
+    saveEmotion(emotion);
+    recupemeotion = loadEmotion();
+    Serial.print("Émotion actuelle : ");
+    Serial.println(recupemeotion);
+    // On suppose que l'émotion est stockée sous forme d'un entier de 5 chiffres
+    // Chaque chiffre représente une émotion différente
+    emotion1 = recupemeotion %10;
+    emotion2 = (recupemeotion / 10) % 10;
+    emotion3 = (recupemeotion / 100) % 10;
+    emotion4 = (recupemeotion / 1000) % 10;
+    emotion5 = (recupemeotion / 10000);
+    Serial.print("Émotion 1 : ");
+    Serial.println(emotion1);
+    Serial.print("Émotion 2 : ");
+    Serial.println(emotion2);
+    Serial.print("Émotion 3 : ");
+    Serial.println(emotion3);
+    Serial.print("Émotion 4 : ");
+    Serial.println(emotion4);
+    Serial.print("Émotion 5 : ");
+    Serial.println(emotion5);
+    delay(1000);
+}

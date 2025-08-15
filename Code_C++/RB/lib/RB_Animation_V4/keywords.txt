@@ -1,0 +1,12 @@
+eye_angry   KEYWORD2
+eye_bad   KEYWORD2
+eye_close   KEYWORD2
+eye_happy   KEYWORD2
+eye_incredible   KEYWORD2
+eye_sad   KEYWORD2
+eye_semi_happy   KEYWORD2
+eye_sleep   KEYWORD2
+mouth_Hengry   KEYWORD2
+mouth_Hengry_hot   KEYWORD2
+mouth_Mischievous   KEYWORD2
+mouth_Surprised   KEYWORD2

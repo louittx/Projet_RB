@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             bindService(intent, connection, BIND_AUTO_CREATE)
         }
 
+        // Start the code
         val rb_v2 = findViewById<ImageView>(R.id.rb_v2)
         // Initialisation du corp
         body = Body(
@@ -94,21 +95,27 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.mending_heart3),
             findViewById(R.id.heart_suit3)
         )
+
         val TextConnection = findViewById<TextView>(R.id.TextConnection)
         val Button_1 = findViewById<Button>(R.id.button)
         val Button_2 = findViewById<Button>(R.id.button2)
         val ButtonConnexion = findViewById<Button>(R.id.ButtonConnexion)
 
-
-
+        // value Hearts
+        /*  0 -> no display
+            1 -> Heart broken
+            2 -> Heart suit
+            3 -> Heart (simple)
+            4 -> Heart fire
+         */
         heart1.updateState(3)
         heart2.updateState(3)
-        heart3.updateState(3) // Cache le 3ème cœur
+        heart3.updateState(3)
 
         sharedPreferences = this.getSharedPreferences("Caracter", MODE_PRIVATE)
 
-        var StokValueHeart = sharedPreferences.getInt("ValueHeart", 0)
-        var StokValueBody = sharedPreferences.getInt("ValueBody", 0)
+        var StoreValueHeart = sharedPreferences.getInt("ValueHeart", 0)
+        var StoreValueBody = sharedPreferences.getInt("ValueBody", 0)
         var StartRB = false
         var ValueBody = 0b11111111111111
         var BufferValueBody = ByteBuffer.allocate(2)
@@ -128,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         thread {
             Thread.sleep(1200)
             while(StartRB) {
-                BufferValueBody.putShort(ValueBody.toShort())
+                BufferValueBody.putInt(ValueBody)
                 val SendValueBody = BufferValueBody.array()
                 service.connectedThread?.write(SendValueBody,2)
             }

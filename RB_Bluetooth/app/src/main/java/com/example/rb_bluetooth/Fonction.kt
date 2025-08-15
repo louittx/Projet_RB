@@ -24,10 +24,10 @@ class Heart(
 
         // Affiche seulement l'image correspondante
         when (state) {
-            4 -> heartOnFire.visibility = View.VISIBLE
             1 -> brokenHeart.visibility = View.VISIBLE
             2 -> mendingHeart.visibility = View.VISIBLE
             3 -> heartSuit.visibility = View.VISIBLE
+            4 -> heartOnFire.visibility = View.VISIBLE
             else -> {} // Aucun cœur visible
         }
     }
